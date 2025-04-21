@@ -28,7 +28,6 @@ public class LoginFlow extends CommonStepsUtil {
     public void setPassword(String password) {
         getWebDriverWait(driver).until(ExpectedConditions.visibilityOf(lp.pwd));
         lp.pwd.sendKeys(password);
-        
     }
 
     public void clickLogin() {
