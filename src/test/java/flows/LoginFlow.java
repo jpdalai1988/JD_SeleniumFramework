@@ -17,6 +17,7 @@ public class LoginFlow extends CommonStepsUtil {
         lp = new LoginPage(driver); // Initialize AFTER driver is set
     }
 
+    
     public void setUserName(String username) {
         getWebDriverWait(driver).until(ExpectedConditions.visibilityOf(lp.userName));
         lp.userName.sendKeys(username);
