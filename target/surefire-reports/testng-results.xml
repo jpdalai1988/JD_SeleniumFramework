@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2025-04-17T17:16:02 IST" name="Test Suite" finished-at="2025-04-17T17:16:13 IST" duration-ms="10863">
+    <groups>
+    </groups>
+    <test started-at="2025-04-17T17:16:02 IST" name="DemoCheck" finished-at="2025-04-17T17:16:13 IST" duration-ms="10863">
+      <class name="tests.LoginTest">
+        <test-method is-config="true" signature="setUpReport()[pri:0, instance:tests.LoginTest@64df9a61]" started-at="2025-04-17T17:16:02 IST" name="setUpReport" finished-at="2025-04-17T17:16:02 IST" duration-ms="176" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpReport -->
+        <test-method is-config="true" signature="setUp(java.lang.reflect.Method)[pri:0, instance:tests.LoginTest@64df9a61]" started-at="2025-04-17T17:16:03 IST" name="setUp" finished-at="2025-04-17T17:16:04 IST" duration-ms="1607" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void tests.LoginTest.loginTest(java.lang.String,java.lang.String) throws java.lang.Exception]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="loginTest(java.lang.String,java.lang.String)[pri:0, instance:tests.LoginTest@64df9a61]" started-at="2025-04-17T17:16:04 IST" name="loginTest" data-provider="loginData" finished-at="2025-04-17T17:16:13 IST" duration-ms="8407" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Admin]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Admin123]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginTest -->
+        <test-method is-config="true" signature="tearDownTest(org.testng.ITestResult)[pri:0, instance:tests.LoginTest@64df9a61]" started-at="2025-04-17T17:16:13 IST" name="tearDownTest" finished-at="2025-04-17T17:16:13 IST" duration-ms="242" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=loginTest status=SUCCESS method=LoginTest.loginTest(java.lang.String,java.lang.String)[pri:0, instance:tests.LoginTest@64df9a61] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownTest -->
+        <test-method is-config="true" signature="tearDownReport()[pri:0, instance:tests.LoginTest@64df9a61]" started-at="2025-04-17T17:16:13 IST" name="tearDownReport" finished-at="2025-04-17T17:16:14 IST" duration-ms="701" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownReport -->
+      </class> <!-- tests.LoginTest -->
+    </test> <!-- DemoCheck -->
+  </suite> <!-- Test Suite -->
+</testng-results>

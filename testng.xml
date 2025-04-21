@@ -1,0 +1,9 @@
+<suite name="Test Suite" parallel="tests" thread-count="1">
+    <test name="DemoCheck">
+   <!--     <parameter name="browser" value="chrome"/> -->
+        <classes>
+        <!--     <class name="tests.TestCheck"/> -->
+            <class name="tests.LoginTest"/>
+        </classes>
+        </test>
+</suite>
