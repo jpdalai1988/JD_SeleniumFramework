@@ -102,3 +102,9 @@
 2025-04-22 17:55:01 INFO  LoginFlow:68 - Entering password.
 2025-04-22 17:55:01 INFO  LoginFlow:70 - Clicking login button.
 2025-04-22 17:58:15 INFO  LoginTest:22 - Test is passed
+2025-04-23 13:11:23 INFO  WebDriverManager:1220 - Using chromedriver 135.0.7049.95 (resolved driver for Chrome 135)
+2025-04-23 13:11:23 INFO  WebDriverManager:1282 - Exporting webdriver.chrome.driver as C:\Users\PScope\.cache\selenium\chromedriver\win64\135.0.7049.95\chromedriver.exe
+2025-04-23 13:11:25 INFO  LoginFlow:58 - Navigating to URL: https://opensource-demo.orangehrmlive.com/web/index.php/auth/login
+2025-04-23 13:11:50 INFO  WebDriverManager:1220 - Using chromedriver 135.0.7049.95 (resolved driver for Chrome 135)
+2025-04-23 13:11:50 INFO  WebDriverManager:1282 - Exporting webdriver.chrome.driver as C:\Users\PScope\.cache\selenium\chromedriver\win64\135.0.7049.95\chromedriver.exe
+2025-04-23 13:11:50 INFO  LoginFlow:58 - Navigating to URL: https://opensource-demo.orangehrmlive.com/web/index.php/auth/login
