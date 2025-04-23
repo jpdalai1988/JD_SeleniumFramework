@@ -1,6 +1,7 @@
 package pages;
 
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -13,13 +14,23 @@ public class LoginPage  {
         this.driver = driver;
         PageFactory.initElements(driver, this); 
     }
-	@FindBy(xpath = "//input[@placeholder='Username']")
+    
+    /*
+	@FindBy(xpath = "//input[@placeholder='username']")
 	public WebElement userName;
 
-	@FindBy(xpath = "//input[@placeholder='Password']")
+	@FindBy(xpath = "//input[@placeholder='password']")
 	public WebElement pwd;
 
 	@FindBy(xpath = "//button[normalize-space()='Login']")
 	public WebElement loginbutton;
+	
+	*/
+	
+	public By userName = By.xpath("//input[@name='username']");
+	public By pwd = By.xpath("//input[@name='password']");
+	public By loginbutton = By.xpath("//button[normalize-space()='Login']");
+	public By dashboardhome = By.xpath("//h6[normalize-space()='Dashboard']");
 
+	
 	}

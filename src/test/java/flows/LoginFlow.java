@@ -2,6 +2,7 @@ package flows;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
@@ -11,6 +12,7 @@ import pages.LoginPage;
 import utility.CommonStepsUtil;
 import utility.ConfigReader;
 import utility.DriverFactory;
+import utility.ExtentTestManager;
 import utility.JavaUtil;
 import utility.SeleniumUtil;
 
@@ -60,6 +62,7 @@ public class LoginFlow extends SeleniumUtil {
         driver.get(url);
         ju.waitForSeconds(5);
 
+        /* one way of enter the element
         waitforVisibility(lp.userName);
         logger.info("Entering username: " + username);
         lp.userName.sendKeys(username);
@@ -69,6 +72,28 @@ public class LoginFlow extends SeleniumUtil {
         lp.pwd.sendKeys(password);
         logger.info("Clicking login button.");
         lp.loginbutton.click();
+        */
+        logger.info("Entering username: " + username);
+        type(lp.userName,username);
+        logger.info("Entering password.");
+        type(lp.pwd,password);
+        click(lp.loginbutton);
         System.out.println("Testing login with: " + username + " / " + password);
+        ju.waitForSeconds(5);
+
+        if(isElementDisplayed(lp.dashboardhome)) {
+        	System.out.println("Valid Credential is: " +username+ "/" +password );
+            logger.info("Login is valid");
+        	ExtentTestManager.getTest().pass("Login is valid");
+
+        }else {
+        	System.out.println("Invalid Credential is: " +username+ "/" +password );
+        	logger.info("Login is Invalid");
+        	ExtentTestManager.getTest().pass("Login is Invalid");
+        }
     }
-}
+    
+   
+        
+    }
+
