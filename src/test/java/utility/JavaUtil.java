@@ -34,7 +34,7 @@ public class JavaUtil {
     }
 
     // Pause execution
-    public void sleep(int seconds) {
+    public void waitForSeconds(int seconds) {
         try {
             Thread.sleep(seconds * 1000);
         } catch (InterruptedException e) {

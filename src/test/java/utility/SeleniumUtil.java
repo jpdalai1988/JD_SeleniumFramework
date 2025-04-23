@@ -1,6 +1,5 @@
 package utility;
 
-
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.*;
@@ -15,96 +14,112 @@ import org.apache.commons.io.FileUtils;
 
 public class SeleniumUtil {
 
-    public static WebDriver driver;
-    public static WebDriverWait wait;
-    public static Actions actions;
+	public static WebDriver driver;
+	public static WebDriverWait wait;
+	public static Actions actions;
 
-    // Constructor
-    public SeleniumUtil(WebDriver driver) {
-        SeleniumUtil.driver = driver;
-        wait = new WebDriverWait(driver, Duration.ofSeconds(15));
-        actions = new Actions(driver);
-    }
+	public SeleniumUtil(WebDriver driver) {
+		SeleniumUtil.driver = driver;
+		wait = new WebDriverWait(driver, Duration.ofSeconds(15));
+		actions = new Actions(driver);
+	}
 
-    // Element Interaction
-    public void click(By locator) {
-        wait.until(ExpectedConditions.elementToBeClickable(locator)).click();
-    }
+//    // Constructor
+//    public SeleniumUtil(WebDriver driver) {
+//        SeleniumUtil.driver = driver;
+//        wait = new WebDriverWait(driver, Duration.ofSeconds(15));
+//        actions = new Actions(driver);
+//    }
 
-    public void type(By locator, String text) {
-        wait.until(ExpectedConditions.visibilityOfElementLocated(locator)).sendKeys(text);
-    }
+	// Element Interaction (Click Method)
+	public void waitforVisibility(WebElement locator) {
+		wait.until(ExpectedConditions.visibilityOf(locator));
+	}
 
-    public String getText(By locator) {
-        return wait.until(ExpectedConditions.visibilityOfElementLocated(locator)).getText();
-    }
+	// Element Interaction (Click Method)
+	public void click(By locator) {
+		wait.until(ExpectedConditions.elementToBeClickable(locator)).click();
+	}
 
-    public boolean isElementDisplayed(By locator) {
-        try {
-            return wait.until(ExpectedConditions.visibilityOfElementLocated(locator)).isDisplayed();
-        } catch (NoSuchElementException | TimeoutException e) {
-            return false;
-        }
-    }
+	// Element Interaction (SendKeys Method)
+	public void type(By locator, String text) {
+		wait.until(ExpectedConditions.visibilityOfElementLocated(locator)).sendKeys(text);
+	}
 
-    // Dropdowns
-    public void selectByVisibleText(By locator, String text) {
-        WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
-        new Select(element).selectByVisibleText(text);
-    }
+	// Element Interaction (GetText Method)
+	public String getText(By locator) {
+		return wait.until(ExpectedConditions.visibilityOfElementLocated(locator)).getText();
+	}
 
-    // Alerts
-    public void acceptAlert() {
-        wait.until(ExpectedConditions.alertIsPresent()).accept();
-    }
+	// Element Interaction (isDisplayed Method)
+	public boolean isElementDisplayed(By locator) {
+		try {
+			return wait.until(ExpectedConditions.visibilityOfElementLocated(locator)).isDisplayed();
+		} catch (NoSuchElementException | TimeoutException e) {
+			return false;
+		}
+	}
 
-    public void dismissAlert() {
-        wait.until(ExpectedConditions.alertIsPresent()).dismiss();
-    }
+	// Dropdowns
+	public void selectByVisibleText(By locator, String text) {
+		WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+		new Select(element).selectByVisibleText(text);
+	}
 
-    public String getAlertText() {
-        return wait.until(ExpectedConditions.alertIsPresent()).getText();
-    }
+	// Alerts
+	public void acceptAlert() {
+		wait.until(ExpectedConditions.alertIsPresent()).accept();
+	}
 
-    // Frames
-    public void switchToFrame(String frameNameOrId) {
-        wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(frameNameOrId));
-    }
+	public void dismissAlert() {
+		wait.until(ExpectedConditions.alertIsPresent()).dismiss();
+	}
 
-    public void switchToDefaultContent() {
-        driver.switchTo().defaultContent();
-    }
+	public String getAlertText() {
+		return wait.until(ExpectedConditions.alertIsPresent()).getText();
+	}
 
-    // Window Handling
-    public void switchToWindow(String windowTitle) {
-        Set<String> allWindows = driver.getWindowHandles();
-        for (String window : allWindows) {
-            driver.switchTo().window(window);
-            if (driver.getTitle().equals(windowTitle)) {
-                break;
-            }
-        }
-    }
+	// Frames
+	public void switchToFrame(String newFrame) {
+		wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(newFrame));
+	}
 
-    // Mouse Actions
-    public void hoverOverElement(By locator) {
-        WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
-        actions.moveToElement(element).perform();
-    }
+	public void switchToDefaultContent() {
+		driver.switchTo().defaultContent();
+	}
 
-    // Screenshot
-    public void takeScreenshot(String filePath) {
-        File src = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-        try {
-            FileUtils.copyFile(src, new File(filePath));
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
+	// Window Handling
+	public void switchToWindow(String windowTitle) {
+		Set<String> allWindows = driver.getWindowHandles();
+		for (String window : allWindows) {
+			driver.switchTo().window(window);
+			if (driver.getTitle().equals(windowTitle)) {
+				break;
+			}
+		}
+	}
 
-    // Scroll
-    public void scrollToElement(By locator) {
-        WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
-        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
-    }
+	// Mouse Actions
+	public void hoverOverElement(By locator) {
+		WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+		actions.moveToElement(element).perform();
+	}
+
+	
+
+	// Screenshot
+	public void takeScreenshot(String filePath) {
+		File src = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+		try {
+			FileUtils.copyFile(src, new File(filePath));
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
+	// Scroll
+	public void scrollToElement(By locator) {
+		WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
+	}
 }

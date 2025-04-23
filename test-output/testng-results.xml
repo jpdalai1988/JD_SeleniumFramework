@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-04-17T17:18:39 IST" name="Test Suite" finished-at="2025-04-17T17:18:54 IST" duration-ms="14846">
+  <suite started-at="2025-04-22T17:54:35 IST" name="Default suite" finished-at="2025-04-22T17:58:15 IST" duration-ms="220007">
     <groups>
     </groups>
-    <test started-at="2025-04-17T17:18:39 IST" name="DemoCheck" finished-at="2025-04-17T17:18:54 IST" duration-ms="14846">
+    <test started-at="2025-04-22T17:54:35 IST" name="Default test" finished-at="2025-04-22T17:58:15 IST" duration-ms="220007">
       <class name="tests.LoginTest">
-        <test-method is-config="true" signature="setUpReport()[pri:0, instance:tests.LoginTest@121314f7]" started-at="2025-04-17T17:18:38 IST" name="setUpReport" finished-at="2025-04-17T17:18:39 IST" duration-ms="272" status="PASS">
+        <test-method is-config="true" signature="setUpReport()[pri:0, instance:tests.LoginTest@2c715e84]" started-at="2025-04-22T17:54:35 IST" name="setUpReport" finished-at="2025-04-22T17:54:35 IST" duration-ms="161" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpReport -->
-        <test-method is-config="true" signature="setUp(java.lang.reflect.Method)[pri:0, instance:tests.LoginTest@121314f7]" started-at="2025-04-17T17:18:40 IST" name="setUp" finished-at="2025-04-17T17:18:42 IST" duration-ms="2053" status="PASS">
+        <test-method is-config="true" signature="setUp(java.lang.reflect.Method)[pri:0, instance:tests.LoginTest@2c715e84]" started-at="2025-04-22T17:54:36 IST" name="setUp" finished-at="2025-04-22T17:54:38 IST" duration-ms="1642" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -22,7 +22,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="loginTest(java.lang.String,java.lang.String)[pri:0, instance:tests.LoginTest@121314f7]" started-at="2025-04-17T17:18:42 IST" name="loginTest" data-provider="loginData" finished-at="2025-04-17T17:18:53 IST" duration-ms="11513" status="PASS">
+        <test-method signature="loginTest(java.lang.String,java.lang.String)[pri:0, instance:tests.LoginTest@2c715e84]" started-at="2025-04-22T17:54:38 IST" name="loginTest" data-provider="loginData" finished-at="2025-04-22T17:54:51 IST" duration-ms="13281" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -38,22 +38,60 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginTest -->
-        <test-method is-config="true" signature="tearDownTest(org.testng.ITestResult)[pri:0, instance:tests.LoginTest@121314f7]" started-at="2025-04-17T17:18:53 IST" name="tearDownTest" finished-at="2025-04-17T17:18:54 IST" duration-ms="267" status="PASS">
+        <test-method is-config="true" signature="tearDownTest(org.testng.ITestResult)[pri:0, instance:tests.LoginTest@2c715e84]" started-at="2025-04-22T17:54:51 IST" name="tearDownTest" finished-at="2025-04-22T17:54:51 IST" duration-ms="321" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=loginTest status=SUCCESS method=LoginTest.loginTest(java.lang.String,java.lang.String)[pri:0, instance:tests.LoginTest@121314f7] output={null}]]]>
+                <![CDATA[[TestResult name=loginTest status=SUCCESS method=LoginTest.loginTest(java.lang.String,java.lang.String)[pri:0, instance:tests.LoginTest@2c715e84] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownTest -->
-        <test-method is-config="true" signature="tearDownReport()[pri:0, instance:tests.LoginTest@121314f7]" started-at="2025-04-17T17:18:54 IST" name="tearDownReport" finished-at="2025-04-17T17:18:54 IST" duration-ms="687" status="PASS">
+        <test-method is-config="true" signature="setUp(java.lang.reflect.Method)[pri:0, instance:tests.LoginTest@2c715e84]" started-at="2025-04-22T17:54:51 IST" name="setUp" finished-at="2025-04-22T17:54:52 IST" duration-ms="964" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void tests.LoginTest.loginTest(java.lang.String,java.lang.String) throws java.lang.Exception]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="loginTest(java.lang.String,java.lang.String)[pri:0, instance:tests.LoginTest@2c715e84]" started-at="2025-04-22T17:54:52 IST" name="loginTest" data-provider="loginData" finished-at="2025-04-22T17:58:15 IST" duration-ms="202926" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Admin]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Jitendra123]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginTest -->
+        <test-method is-config="true" signature="tearDownTest(org.testng.ITestResult)[pri:0, instance:tests.LoginTest@2c715e84]" started-at="2025-04-22T17:58:15 IST" name="tearDownTest" finished-at="2025-04-22T17:58:15 IST" duration-ms="221" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=loginTest status=SUCCESS method=LoginTest.loginTest(java.lang.String,java.lang.String)[pri:0, instance:tests.LoginTest@2c715e84] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownTest -->
+        <test-method is-config="true" signature="tearDownReport()[pri:0, instance:tests.LoginTest@2c715e84]" started-at="2025-04-22T17:58:15 IST" name="tearDownReport" finished-at="2025-04-22T17:58:16 IST" duration-ms="805" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownReport -->
       </class> <!-- tests.LoginTest -->
-    </test> <!-- DemoCheck -->
-  </suite> <!-- Test Suite -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>

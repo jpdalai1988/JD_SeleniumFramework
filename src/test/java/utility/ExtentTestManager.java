@@ -14,4 +14,8 @@ public class ExtentTestManager {
         ExtentTest test = ExtentManager.getInstance().createTest(testName);
         extentTest.set(test);
     }
+    
+    public static void endTest() {
+        extentTest.remove();
+    }
 }
