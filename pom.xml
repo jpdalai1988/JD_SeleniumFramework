@@ -2,8 +2,8 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>Gimersion</groupId>
-	<artifactId>Gimersion</artifactId>
+	<groupId>JD_SeleniumFramework</groupId>
+	<artifactId>JD_SeleniumFramework</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 
 
@@ -80,6 +80,19 @@
 			<version>1.1.1</version>
 		</dependency>
 
+		<!-- MySQL  (if needed for database intergration) -->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>8.0.33</version>
+		</dependency>
+
+		<!-- PostgreSQL  (if needed for database intergration) -->
+		<dependency>
+			<groupId>org.postgresql</groupId>
+			<artifactId>postgresql</artifactId>
+			<version>42.6.0</version> <!-- or latest -->
+		</dependency>
 
 	</dependencies>
 
