@@ -23,7 +23,6 @@ public class LoginFlow extends SeleniumUtil {
     private WebDriver driver;
     private LoginPage lp;
     private JavaUtil ju;
-
     
     public LoginFlow(WebDriver driver) {
     	super(driver); 
