@@ -18,8 +18,8 @@ public class ExcelUtil {
 		try {
 			this.filePath = excelPath;
 			FileInputStream fis = new FileInputStream(excelPath);
-			Workbook workbook = new XSSFWorkbook(fis);
-			sheet = workbook.getSheet(sheetName);
+			 wb = new XSSFWorkbook(fis);
+			sheet = wb.getSheet(sheetName);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -66,7 +66,7 @@ public class ExcelUtil {
 	}
 
 	public void writeToExcelExample() {
-		ExcelUtil excel = new ExcelUtil("src/test/resources/TestData.xlsx", "ExcelOutput");
+		ExcelUtil excel = new ExcelUtil("src/test/resources/TestData/TestData.xlsx", "ExcelOutput");
 
 		excel.setCellData("PASS", 1, 2); // Writes to cell C2 (row 1, column 2)
 		excel.setCellData("FAIL", 2, 2); // Writes to cell C3
@@ -79,7 +79,7 @@ public class ExcelUtil {
 	}
 
 	public void readTestDataFromExcel() {
-		ExcelUtil excel = new ExcelUtil("src/test/resources/TestData.xlsx", "LoginData");
+		ExcelUtil excel = new ExcelUtil("src/test/resources/TestData/TestData.xlsx", "LoginData");
 
 		int rowCount = excel.getRowCount();
 
@@ -102,7 +102,7 @@ public class ExcelUtil {
 	@DataProvider(name = "loginData")
 	public static Object[][] getLoginData() {
 
-		ExcelUtil excel = new ExcelUtil("src/test/resources/TestData.xlsx", "LoginData");
+		ExcelUtil excel = new ExcelUtil("src/test/resources/TestData/TestData.xlsx", "LoginData");
 
 		int rows = excel.getRowCount();
 		int cols = excel.getColumnCount();
@@ -114,8 +114,6 @@ public class ExcelUtil {
 				data[i - 1][j] = excel.getCellData(i, j);
 			}
 		}
-
-      
 
 		return data;
 

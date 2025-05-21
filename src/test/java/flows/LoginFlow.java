@@ -7,12 +7,13 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.testng.Assert;
 
 import pages.LoginPage;
 import utility.CommonStepsUtil;
 import utility.ConfigReader;
 import utility.DriverFactory;
-import utility.ExtentTestManager;
+import utility.ExtentManager;
 import utility.JavaUtil;
 import utility.SeleniumUtil;
 
@@ -84,12 +85,18 @@ public class LoginFlow extends SeleniumUtil {
         if(isElementDisplayed(lp.dashboardhome)) {
         	System.out.println("Valid Credential is: " +username+ "/" +password );
             logger.info("Login is valid");
-        	ExtentTestManager.getTest().pass("Login is valid");
+            ExtentManager.getTest().pass("Login is valid");
+            String HomePage= driver.getTitle();
+            Assert.assertEquals(HomePage, "OrangeHRM");
+            click(lp.userdropdown);
+            ju.waitForSeconds(5);
+            click(lp.logoutbutton);
 
         }else {
         	System.out.println("Invalid Credential is: " +username+ "/" +password );
         	logger.info("Login is Invalid");
-        	ExtentTestManager.getTest().pass("Login is Invalid");
+        	ExtentManager.getTest().pass("Login is Invalid");
+
         }
     }
     

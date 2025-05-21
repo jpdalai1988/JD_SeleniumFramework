@@ -3,10 +3,7 @@ package tests;
 import utility.CommonStepsUtil.ScreenshotUtil;
 import utility.DriverFactory;
 import utility.ExtentManager;
-import utility.ExtentTestManager;
-
 import java.lang.reflect.Method;
-
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
@@ -28,20 +25,20 @@ public class BaseTest extends DriverFactory {
 	@BeforeMethod
 	public void setUp(Method method) throws Exception {
 		initializeDriver();
-		ExtentTestManager.startTest(method.getName());
+		ExtentManager.startTest(method.getName());
 	}
 
 	@AfterMethod
 	public void tearDownTest(ITestResult result) {
 		if (result.getStatus() == ITestResult.FAILURE) {
-			ExtentTestManager.getTest().log(Status.FAIL, "Test Failed");
+			ExtentManager.getTest().log(Status.FAIL, "Test Failed");
 			String screenshotPath = ScreenshotUtil.capture(driver, result.getName());
-		    ExtentTestManager.getTest().addScreenCaptureFromPath(screenshotPath);
-		    ExtentTestManager.getTest().fail(result.getThrowable());
+			ExtentManager.getTest().addScreenCaptureFromPath(screenshotPath);
+			ExtentManager.getTest().fail(result.getThrowable());
 		} else if (result.getStatus() == ITestResult.SUCCESS) {
-			ExtentTestManager.getTest().log(Status.PASS, "Test Passed");
+			ExtentManager.getTest().log(Status.PASS, "Test Passed");
 		} else {
-			ExtentTestManager.getTest().log(Status.SKIP, "Test Skipped");
+			ExtentManager.getTest().log(Status.SKIP, "Test Skipped");
 		}
 		quitDriver();
 	}

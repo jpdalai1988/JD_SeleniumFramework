@@ -31,6 +31,9 @@ public class LoginPage  {
 	public By pwd = By.xpath("//input[@name='password']");
 	public By loginbutton = By.xpath("//button[normalize-space()='Login']");
 	public By dashboardhome = By.xpath("//h6[normalize-space()='Dashboard']");
+	public By userdropdown = By.xpath("//i[@class='oxd-icon bi-caret-down-fill oxd-userdropdown-icon']");
+	public By logoutbutton = By.xpath("//a[normalize-space()='Logout']");
+
 
 	
 	}

@@ -10,26 +10,26 @@ public class TestListener implements ITestListener {
 	@Override
 	public void onTestStart(ITestResult result) {
 		String testName = result.getMethod().getMethodName();
-		ExtentTestManager.startTest(testName);
-		ExtentTestManager.getTest().info("Test started: " + testName);
+		ExtentManager.startTest(testName);
+		ExtentManager.getTest().info("Test started: " + testName);
 	}
 
 	@Override
 	public void onTestSuccess(ITestResult result) {
-		ExtentTestManager.getTest().pass("Test passed");
-		ExtentTestManager.endTest();
+		ExtentManager.getTest().pass("Test passed");
+		ExtentManager.endTest();
 	}
 
 	@Override
 	public void onTestFailure(ITestResult result) {
-		ExtentTestManager.getTest().fail("Test failed: " + result.getThrowable());
-		ExtentTestManager.endTest();
+		ExtentManager.getTest().fail("Test failed: " + result.getThrowable());
+		ExtentManager.endTest();
 	}
 
 	@Override
 	public void onTestSkipped(ITestResult result) {
-		ExtentTestManager.getTest().skip("Test skipped: " + result.getThrowable());
-		ExtentTestManager.endTest();
+		ExtentManager.getTest().skip("Test skipped: " + result.getThrowable());
+		ExtentManager.endTest();
 	}
 
 	// Optional: implement these if needed
@@ -40,7 +40,7 @@ public class TestListener implements ITestListener {
 	@Override
 	public void onFinish(ITestContext context) {
 		System.out.println("I am in on Finish method " + context.getName());
-		ExtentTestManager.endTest();
+		ExtentManager.endTest();
 
 	}
 }

@@ -1,12 +1,15 @@
-<suite name="Test Suite 01" parallel="tests" thread-count="1">
-	<test name="Login Test Functionlity">
-		<listeners>
-			<listener class-name="utility.TestListener" />
-		</listeners>
-		<!--     <parameter name="browser" value="chrome"/> -->
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Test Suite 01" parallel="tests" thread-count="2">
+	<listeners>
+		<listener class-name="utility.TestListener" />
+	</listeners>
+	<test name="Login Test Functionality">
+
+		<parameter name="browser" value="chrome" />
 		<classes>
-			<!--     <class name="tests.TestCheck"/> -->
 			<class name="tests.LoginTest" />
+			<!--	<class name="tests.TestCheck" /> -->
+
 		</classes>
 	</test>
 </suite>

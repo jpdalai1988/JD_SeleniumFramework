@@ -60,10 +60,22 @@ public class SeleniumUtil {
 		}
 	}
 
-	// Dropdowns
+	// Dropdowns by Text
 	public void selectByVisibleText(By locator, String text) {
 		WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
 		new Select(element).selectByVisibleText(text);
+	}
+
+	// Dropdowns by Index
+	public void selectByIndex(By locator, int index) {
+		WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+		new Select(element).selectByIndex(index);
+	}
+
+	// Dropdowns by value
+	public void selectByValue(By locator, String value) {
+		WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+		new Select(element).selectByValue(value);
 	}
 
 	// Alerts
@@ -105,8 +117,6 @@ public class SeleniumUtil {
 		actions.moveToElement(element).perform();
 	}
 
-	
-
 	// Screenshot
 	public void takeScreenshot(String filePath) {
 		File src = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
@@ -117,9 +127,11 @@ public class SeleniumUtil {
 		}
 	}
 
-	// Scroll
+	// Scroll using JavascriptExecutor
 	public void scrollToElement(By locator) {
 		WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
 		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
 	}
+	
+	
 }
